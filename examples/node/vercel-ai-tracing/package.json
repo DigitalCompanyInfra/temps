@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx test_genai_tracing.ts",
-    "start:real": "tsx test_real_calls.ts"
+    "start": "node init && tsx test_genai_tracing.ts",
+    "start:real": "node init && tsx test_real_calls.ts"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^2.0.110",

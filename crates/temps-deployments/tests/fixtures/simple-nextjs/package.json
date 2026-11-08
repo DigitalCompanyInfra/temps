@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Simple Next.js app for testing Nixpacks deployment",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start -p ${PORT:-3000}",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start -p ${PORT:-3000}",
     "lint": "next lint"
   },
   "dependencies": {

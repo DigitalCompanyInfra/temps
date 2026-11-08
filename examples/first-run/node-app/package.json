@@ -5,7 +5,7 @@
   "description": "Managed-service authentication app used by the Temps first-run scenario suite.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node init && node server.js"
   },
   "engines": {
     "node": ">=20"

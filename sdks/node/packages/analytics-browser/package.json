@@ -1,53 +1,53 @@
 {
-	"name": "@temps-sdk/analytics-browser",
-	"version": "0.0.8",
-	"description": "Vanilla JS analytics SDK for Temps. Use as a script tag or import programmatically.",
-	"private": false,
-	"type": "module",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		},
-		"./auto": {
-			"types": "./dist/auto.d.ts",
-			"import": "./dist/auto.js"
-		},
-		"./cdn": {
-			"default": "./dist/temps.min.js"
-		}
-	},
-	"unpkg": "./dist/temps.min.js",
-	"jsdelivr": "./dist/temps.min.js",
-	"files": [
-		"dist",
-		"README.md"
-	],
-	"scripts": {
-		"build:js": "tsc -p tsconfig.json",
-		"build:types": "tsc -p tsconfig.types.json",
-		"build:cdn": "bun build src/auto.ts --target browser --format iife --outfile dist/temps.js && bun build src/auto.ts --target browser --format iife --outfile dist/temps.min.js --minify",
-		"build": "bun run build:js && bun run build:types && bun run build:cdn",
-		"clean": "rm -rf dist",
-		"test": "bun run test:run",
-		"test:cdn": "node scripts/verify-cdn-bundle.mjs",
-		"test:run": "bun run build && bun run test:cdn",
-		"prepublishOnly": "node ../../scripts/require-bun-publish.mjs && bun run clean && bun run build"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@temps-sdk/analytics-core": "workspace:*"
-	},
-	"devDependencies": {
-		"typescript": "^5.5.4"
-	},
-	"sideEffects": [
-		"./dist/auto.js",
-		"./dist/temps.js",
-		"./dist/temps.min.js"
-	]
+  "name": "@temps-sdk/analytics-browser",
+  "version": "0.0.8",
+  "description": "Vanilla JS analytics SDK for Temps. Use as a script tag or import programmatically.",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./auto": {
+      "types": "./dist/auto.d.ts",
+      "import": "./dist/auto.js"
+    },
+    "./cdn": {
+      "default": "./dist/temps.min.js"
+    }
+  },
+  "unpkg": "./dist/temps.min.js",
+  "jsdelivr": "./dist/temps.min.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build:js": "node init && tsc -p tsconfig.json",
+    "build:types": "node init && tsc -p tsconfig.types.json",
+    "build:cdn": "node init && bun build src/auto.ts --target browser --format iife --outfile dist/temps.js && bun build src/auto.ts --target browser --format iife --outfile dist/temps.min.js --minify",
+    "build": "node init && bun run build:js && bun run build:types && bun run build:cdn",
+    "clean": "rm -rf dist",
+    "test": "bun run test:run",
+    "test:cdn": "node scripts/verify-cdn-bundle.mjs",
+    "test:run": "bun run build && bun run test:cdn",
+    "prepublishOnly": "node ../../scripts/require-bun-publish.mjs && bun run clean && bun run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@temps-sdk/analytics-core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "sideEffects": [
+    "./dist/auto.js",
+    "./dist/temps.js",
+    "./dist/temps.min.js"
+  ]
 }

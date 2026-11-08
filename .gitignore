@@ -13,10 +13,8 @@ node_modules
 dist/
 
 # IDE
-.vscode/*
 !.vscode/extensions.json
 .idea
-.vscode
 .claude
 .*-mcp
 .classpath
@@ -35,8 +33,6 @@ target_old
 *.mp4
 *.rec
 
-.env
-.env.local
 /secrets/
 
 # Promptfoo eval results may contain project metadata and AI transcripts.
@@ -95,3 +91,4 @@ ci-build-cache/
 # CI compose-security prebuilt-binary pipeline
 ci-prebuilt/
 ci-build-cache/
+config.bat

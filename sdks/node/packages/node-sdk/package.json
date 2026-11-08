@@ -18,7 +18,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "node init && tsc -p tsconfig.build.json",
     "generate": "npx @hey-api/openapi-ts@0.99.0 -i ./scripts/openapi.json -o src/client -c @hey-api/client-fetch && python3 ../../../../scripts/source_attribution.py annotate sdks/node/packages/node-sdk/src/client",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist"

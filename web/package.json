@@ -2,9 +2,11 @@
   "name": "@temps-sdk/console",
   "private": true,
   "type": "module",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "version": "1.0.0",
-  "description": "The Temps console — the full OSS web app, also exported as <TempsConsole> for downstream editions to consume whole.",
+  "description": "The Temps console \u2014 the full OSS web app, also exported as <TempsConsole> for downstream editions to consume whole.",
   "engines": {
     "node": ">=22.0.0"
   },
@@ -19,9 +21,9 @@
   },
   "scripts": {
     "openapi-ts": "openapi-ts && python3 ../scripts/source_attribution.py annotate web/src/api/client",
-    "dev": "rsbuild dev",
-    "build": "rsbuild build",
-    "start": "rsbuild preview",
+    "dev": "node init && rsbuild dev",
+    "build": "node init && rsbuild build",
+    "start": "node init && rsbuild preview",
     "preview": "rsbuild preview",
     "_comment:test": "Scoped to src/ so bun's runner does not pick up the Playwright specs under e2e/ -- it matches *.spec.ts too, and those only run under `bun run e2e`.",
     "test": "bun test src rsbuild.config.test.ts e2e/suites.test.ts",
